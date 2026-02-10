@@ -1,0 +1,7 @@
+# Compiled PlatformIO files
+.pio/
+
+diagram.json
+platformio.ini
+wokwi.toml
+
