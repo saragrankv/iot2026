@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Sara Grankvist",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 96, "left": 139.24, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 94, "left": 297.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo1:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo1:PWM", "esp:2", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

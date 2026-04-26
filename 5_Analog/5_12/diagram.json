@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Sara Grankvist",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 96, "left": 139.24, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": 112,
+      "left": 274.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -10.9, "left": 201.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd2:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "lcd2:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "lcd2:SDA", "esp:21", "green", [ "h0" ] ],
+    [ "lcd2:SCL", "esp:22", "green", [ "h0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:2", "green", [ "v0" ] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Sara Grankvist",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 96, "left": 139.24, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -10.9, "left": 201.4, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 40.8,
+      "left": 318.6,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:2", "green", [ "v0" ] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.3", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
