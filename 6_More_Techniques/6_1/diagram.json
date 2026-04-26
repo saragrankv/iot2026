@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "Sara Grankvist",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -76.8, "left": 120.04, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": -64, "left": -76, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 6, "left": 243.8, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "ldr1:DO", "esp:12", "green", [ "h0" ] ],
+    [ "ldr1:AO", "esp:32", "green", [ "h0" ] ],
+    [ "led1:A", "esp:4", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
